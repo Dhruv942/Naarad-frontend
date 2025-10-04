@@ -1,109 +1,121 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Naarad AI - Super Personalized Updates</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              primary: '#25D366', // WhatsApp Green
-              'primary-dark': '#1EB358',
-              'primary-darker': '#128C7E', 
-              'primary-light': '#DCF8C6', 
-              'primary-lighter': '#EFFFF4',
-              'primary-lightest': '#F6FFF8', 
-              secondary: '#075E54', // Darker WhatsApp Teal
-              'secondary-dark': '#05483F', // Slightly darker secondary for gradients
-              'secondary-light': '#34B7F1', // WhatsApp blue for links/timestamps
-              accent: '#ECE5DD', // WhatsApp chat background
-              lightgray: '#F7FAFC', 
-              mediumgray: '#E2E8F0',
-              darkgray: '#A0AEC0',
-              'gray-850': '#1A202C', // New dark gray for subtle backgrounds
-              'gray-900': '#171923', // Standard dark
-              'gray-950': '#0D1117', // Even darker for deep backgrounds
+              primary: "#25D366", // WhatsApp Green
+              "primary-dark": "#1EB358",
+              "primary-darker": "#128C7E",
+              "primary-light": "#DCF8C6",
+              "primary-lighter": "#EFFFF4",
+              "primary-lightest": "#F6FFF8",
+              secondary: "#075E54", // Darker WhatsApp Teal
+              "secondary-dark": "#05483F", // Slightly darker secondary for gradients
+              "secondary-light": "#34B7F1", // WhatsApp blue for links/timestamps
+              accent: "#ECE5DD", // WhatsApp chat background
+              lightgray: "#F7FAFC",
+              mediumgray: "#E2E8F0",
+              darkgray: "#A0AEC0",
+              "gray-850": "#1A202C", // New dark gray for subtle backgrounds
+              "gray-900": "#171923", // Standard dark
+              "gray-950": "#0D1117", // Even darker for deep backgrounds
 
               // More accent colors for tags
-              'accent-blue': '#3B82F6',
-              'accent-blue-light': '#DBEAFE',
-              'accent-pink': '#EC4899',
-              'accent-pink-light': '#FCE7F3',
-              'accent-purple': '#8B5CF6',
-              'accent-purple-light': '#F5F3FF',
-              'accent-orange': '#F97316',
-              'accent-orange-light': '#FFF7ED',
-              'accent-teal': '#14B8A6',
-              'accent-teal-light': '#F0FDFA',
+              "accent-blue": "#3B82F6",
+              "accent-blue-light": "#DBEAFE",
+              "accent-pink": "#EC4899",
+              "accent-pink-light": "#FCE7F3",
+              "accent-purple": "#8B5CF6",
+              "accent-purple-light": "#F5F3FF",
+              "accent-orange": "#F97316",
+              "accent-orange-light": "#FFF7ED",
+              "accent-teal": "#14B8A6",
+              "accent-teal-light": "#F0FDFA",
               // Semantic text colors for accent backgrounds
-              'text-orange-700': '#C2410C', 
-              'text-pink-700': '#BE185D',   
-              'text-purple-700': '#7C3AED', 
-              'text-teal-700': '#0D9488',   
-              'text-blue-700': '#1D4ED8',    
-              'text-green-800': '#166534', 
+              "text-orange-700": "#C2410C",
+              "text-pink-700": "#BE185D",
+              "text-purple-700": "#7C3AED",
+              "text-teal-700": "#0D9488",
+              "text-blue-700": "#1D4ED8",
+              "text-green-800": "#166534",
             },
             fontFamily: {
-              sans: ['Poppins', 'sans-serif'],
+              sans: ["Poppins", "sans-serif"],
             },
             boxShadow: {
-              'subtle': '0 2px 4px 0 rgba(0,0,0,0.05)',
-              'card': '0 4px 12px 0 rgba(0,0,0,0.1)',
-              'interactive': '0 0 0 3px rgba(37, 211, 102, 0.3)', 
-              'tag': '0 2px 5px rgba(0,0,0,0.1)',
-              'tag-selected': '0 0 0 2px #25D366, 0 3px 7px rgba(0,0,0,0.25)', 
-              'xl-dark': '0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.08)',
-              '2xl-dark': '0 25px 50px -12px rgba(0, 0, 0, 0.35)', // New deeper shadow
-              'glow-primary': '0 0 15px 5px rgba(37, 211, 102, 0.3)', // Glow effect for primary
-              'glow-white': '0 0 20px 5px rgba(255, 255, 255, 0.1)', // Subtle white glow
+              subtle: "0 2px 4px 0 rgba(0,0,0,0.05)",
+              card: "0 4px 12px 0 rgba(0,0,0,0.1)",
+              interactive: "0 0 0 3px rgba(37, 211, 102, 0.3)",
+              tag: "0 2px 5px rgba(0,0,0,0.1)",
+              "tag-selected": "0 0 0 2px #25D366, 0 3px 7px rgba(0,0,0,0.25)",
+              "xl-dark":
+                "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.08)",
+              "2xl-dark": "0 25px 50px -12px rgba(0, 0, 0, 0.35)", // New deeper shadow
+              "glow-primary": "0 0 15px 5px rgba(37, 211, 102, 0.3)", // Glow effect for primary
+              "glow-white": "0 0 20px 5px rgba(255, 255, 255, 0.1)", // Subtle white glow
             },
             transitionProperty: {
-              'height': 'height',
-              'spacing': 'margin, padding',
-              'width': 'width',
-              'bg': 'background-color',
-              'shadow': 'box-shadow',
-              'transform': 'transform',
-              'opacity': 'opacity',
-              'border': 'border-color', // Added border for transitions
+              height: "height",
+              spacing: "margin, padding",
+              width: "width",
+              bg: "background-color",
+              shadow: "box-shadow",
+              transform: "transform",
+              opacity: "opacity",
+              border: "border-color", // Added border for transitions
             },
             transitionTimingFunction: {
-              'ease-out-quad': 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-              'ease-in-out-sine': 'cubic-bezier(0.37, 0, 0.63, 1)', // New timing function
+              "ease-out-quad": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+              "ease-in-out-sine": "cubic-bezier(0.37, 0, 0.63, 1)", // New timing function
             },
             animation: {
-                pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                'slow-pulse': 'slow-pulse 3s ease-in-out infinite', // New slow pulse
-                'float': 'float 6s ease-in-out infinite', // Floating animation
+              pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+              "slow-pulse": "slow-pulse 3s ease-in-out infinite", // New slow pulse
+              float: "float 6s ease-in-out infinite", // Floating animation
             },
             keyframes: {
-                'slow-pulse': { // Define keyframes for slow-pulse
-                    '0%, 100%': { opacity: 1, transform: 'scale(1)' },
-                    '50%': { opacity: 0.8, transform: 'scale(1.03)' },
-                },
-                'float': { // Define keyframes for floating effect
-                  '0%, 100%': { transform: 'translateY(0px)' },
-                  '50%': { transform: 'translateY(-10px)' },
-                }
-            }
-          }
-        }
-      }
+              "slow-pulse": {
+                // Define keyframes for slow-pulse
+                "0%, 100%": { opacity: 1, transform: "scale(1)" },
+                "50%": { opacity: 0.8, transform: "scale(1.03)" },
+              },
+              float: {
+                // Define keyframes for floating effect
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-10px)" },
+              },
+            },
+          },
+        },
+      };
     </script>
     <style>
       body {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        background-color: theme('colors.gray-950'); /* Darker base for better gradient blending */
-        color: theme('colors.primary-lighter');
+        background-color: theme(
+          "colors.gray-950"
+        ); /* Darker base for better gradient blending */
+        color: theme("colors.primary-lighter");
         scroll-behavior: smooth;
       }
       .clickable {
@@ -114,16 +126,16 @@
         height: 10px;
       }
       ::-webkit-scrollbar-track {
-        background: theme('colors.gray-850'); /* Darker track */
+        background: theme("colors.gray-850"); /* Darker track */
         border-radius: 10px;
       }
       ::-webkit-scrollbar-thumb {
-        background: theme('colors.primary'); 
+        background: theme("colors.primary");
         border-radius: 10px;
-        border: 2px solid theme('colors.gray-850'); /* Match track */
+        border: 2px solid theme("colors.gray-850"); /* Match track */
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: theme('colors.primary-dark');
+        background: theme("colors.primary-dark");
       }
 
       @keyframes pageFadeEnter {
@@ -137,7 +149,8 @@
         }
       }
       .page-fade-enter {
-        animation: pageFadeEnter 0.5s theme('transitionTimingFunction.ease-out-quad') forwards;
+        animation: pageFadeEnter 0.5s
+          theme("transitionTimingFunction.ease-out-quad") forwards;
       }
 
       /* For WOW.js animations to be visible if they are off-screen initially */
@@ -147,29 +160,35 @@
 
       /* Global selection style */
       ::selection {
-        background-color: theme('colors.primary');
-        color: theme('colors.white');
+        background-color: theme("colors.primary");
+        color: theme("colors.white");
       }
-      
+
       /* Smooth transitions for all elements by default */
       * {
-        transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+        transition:
+          background-color 0.2s ease-in-out,
+          border-color 0.2s ease-in-out,
+          color 0.2s ease-in-out,
+          opacity 0.2s ease-in-out,
+          box-shadow 0.2s ease-in-out,
+          transform 0.2s ease-in-out;
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.1.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
-    "react/": "https://esm.sh/react@^19.1.0/",
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.1",
-    "@google/genai": "https://esm.sh/@google/genai@^1.0.1",
-    "@/": "/"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@^19.1.0",
+          "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+          "react/": "https://esm.sh/react@^19.1.0/",
+          "react-router-dom": "https://esm.sh/react-router-dom@^7.6.1",
+          "@google/genai": "https://esm.sh/@google/genai@^1.0.1",
+          "@/": "/"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
   <body class="text-gray-800">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>

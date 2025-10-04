@@ -84,20 +84,29 @@ const FrequencySettingsPage: React.FC = () => {
             <div className="mb-8">
               <label className="block text-md font-semibold text-primary-lighter mb-4">How often should updates arrive?</label>
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                {frequencyOptions.map(freq => (
-                  <TagButton
-                    key={freq}
-                    label={freq}
-                    isSelected={activeAlert.frequency === freq}
-                    onClick={() => handleFrequencyTagSelect(freq)}
-                    size="lg"
-                    color="bg-gray-700/50 hover:bg-gray-700"
-                    textColor="text-gray-100"
-                    selectedColor="bg-primary ring-2 ring-primary-dark shadow-lg"
-                    selectedTextColor="text-white"
-                    className="!rounded-lg w-full justify-center !py-3"
-                  />
-                ))}
+                {frequencyOptions.map(freq => {
+                  const isComingSoon = freq !== UpdateFrequency.REAL_TIME;
+                  return (
+                    <div key={freq} className="relative">
+                      <TagButton
+                        label={isComingSoon ? `${freq}` : freq}
+                        isSelected={activeAlert.frequency === freq}
+                        onClick={() => !isComingSoon && handleFrequencyTagSelect(freq)}
+                        size="lg"
+                        color="bg-gray-700/50 hover:bg-gray-700"
+                        textColor="text-gray-100"
+                        selectedColor="bg-primary ring-2 ring-primary-dark shadow-lg"
+                        selectedTextColor="text-white"
+                        className={`!rounded-lg w-full justify-center !py-3 ${isComingSoon ? 'opacity-50 cursor-not-allowed' : ''}`}
+                      />
+                      {isComingSoon && (
+                        <div className="absolute bottom-1 left-0 right-0 flex items-center justify-center pointer-events-none">
+                          <span className="text-xs text-yellow-300">Coming Soon</span>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             </div>
             

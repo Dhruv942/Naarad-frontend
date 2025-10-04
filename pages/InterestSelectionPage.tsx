@@ -632,7 +632,7 @@ const InterestSelectionPage: React.FC = () => {
         console.log("🔍 DEBUG - Custom Input:", categoryPrefs?.customInput);
         console.log("🔍 DEBUG - Custom Question (sent to backend):", customQuestion);
 
-        const response = await fetch("http://3.107.72.54:8000/alerts/alerts", {
+        const response = await fetch("https://naaradupdates.info/alerts/alerts", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -755,6 +755,9 @@ const InterestSelectionPage: React.FC = () => {
                       </span>
                       <span className="text-md md:text-lg font-semibold tracking-wide">
                         {category.label}
+                        {category.id === 'youtube' && (
+                          <span className="block text-xs mt-1 text-yellow-300">Coming Soon</span>
+                        )}
                       </span>
                     </div>
                   </button>
