@@ -81,7 +81,11 @@ export const ICONS = {
     </svg>
   ),
   WHATSAPP_LOGO: (
-    <img src="/icon.png" alt="WhatsApp Logo" className="w-8 h-8" />
+    <img src="/icon.png" alt="WhatsApp Logo" className="w-12 h-12" onError={(e) => {
+      (e.target as HTMLImageElement).style.display = 'none';
+      const parent = (e.target as HTMLImageElement).parentElement;
+      if (parent) parent.innerHTML = '💬';
+    }} />
   ),
 };
 
